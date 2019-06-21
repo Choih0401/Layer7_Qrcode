@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Layer7 QR code collection</title>
+
+   
+    <link href="https://getbootstrap.com/docs/3.4/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://getbootstrap.com/docs/3.4/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="../static/css/signup.css" rel="stylesheet">
+    <script src="../static/js/jquery-1.11.2.js"></script>
+    
+   
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="/score">Score</a></li>
+            <li role="presentation" class="active"><a href="/logout">Logout</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">QR code</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h2>Please input your flag !!</h2>
+        <form class="form-signin" action="/answerSubmit" method="post">
+        <label for="inputFlag" class="sr-only">FLAG</label>
+        <input type="text" name="inputFlag" id="inputFlag" class="form-control" placeholder="FLAG" required autofocus>
+
+        <input id="btnFlag" class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">
+      </form>
+      </div>
+
+      
+
+      <footer class="footer">
+        <p>&copy; Choih0401</p>
+      </footer>
+
+    </div>
+  </body>
+</html>
+
