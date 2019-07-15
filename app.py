@@ -1,4 +1,4 @@
-from flask import Flask, render_template, json, request,redirect,session
+from flask import Flask, render_template, json, request,redirect,session, send_from_directory
 from flaskext.mysql import MySQL
 from werkzeug import generate_password_hash, check_password_hash
 import datetime
@@ -16,7 +16,7 @@ mysql.init_app(app)
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico', mimetype='image/vnd.microsoft.icon')
+    return send_from_directory(os.path.join(app.root_path, 'static'),'../static/favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/')
 def main():
