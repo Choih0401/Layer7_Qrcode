@@ -3,11 +3,9 @@ from flaskext.mysql import MySQL
 from werkzeug import generate_password_hash, check_password_hash
 import datetime
 import os
-from flask.ext.cache import Cache
 
 mysql = MySQL()
 app = Flask(__name__)
-cache = Cache(app,config={'CACHE_TYPE': 'simple'})
 app.secret_key = 'why would I tell you my secret key?'
 
 # MySQL configurations
