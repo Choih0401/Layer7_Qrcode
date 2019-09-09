@@ -3,9 +3,11 @@ from flaskext.mysql import MySQL
 from werkzeug import generate_password_hash, check_password_hash
 import datetime
 import os
+from flask.ext.cache import Cache
 
 mysql = MySQL()
 app = Flask(__name__)
+cache = Cache(app,config={'CACHE_TYPE': 'simple'})
 app.secret_key = 'why would I tell you my secret key?'
 
 # MySQL configurations
@@ -169,4 +171,4 @@ def answerSubmit():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=7777)
+    app.run(debug=False, host="0.0.0.0", port=7777, threaded=True)
