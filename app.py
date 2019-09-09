@@ -2,6 +2,7 @@ from flask import Flask, render_template, json, request,redirect,session, send_f
 from flaskext.mysql import MySQL
 from werkzeug import generate_password_hash, check_password_hash
 import datetime
+import os
 
 mysql = MySQL()
 app = Flask(__name__)
