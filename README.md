@@ -93,7 +93,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_result`(
 BEGIN
     DECLARE p_statue varchar(100) default 'Wrong';
     if ( select exists (select * from flag where answer = p_input) ) THEN
-        if ( select exists (select * from log where uid = p_uid AND statue = 'overload') ) THEN
+        if ( select exists (select * from log where uid = p_uid and input = p_input AND statue = 'overload') ) THEN
 
             select 'Already solve';
 
