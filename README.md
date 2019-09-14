@@ -13,7 +13,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_submit`(
 BEGIN
     DECLARE p_statue varchar(100) default 'Wrong';
     if ( select exists (select * from flag where answer = p_input) ) THEN
-        SET p_statue = 'success';
+        SET p_statue = 'overload';
         if ( select exists (select * from log where uid = p_uid AND input = p_input) ) THEN
 
 
@@ -37,7 +37,7 @@ BEGIN
             UPDATE tbl_user SET score = score + 1 where user_id = p_uid;
 
 
-
+            SET p_statue = 'success';
             insert into log
             (
                 uid,
