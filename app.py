@@ -11,7 +11,7 @@ app.secret_key = 'why would I tell you my secret key?'
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'ch04010508'
-app.config['MYSQL_DATABASE_PORT'] = '14103'
+app.config['MYSQL_DATABASE_PORT'] = 14103
 app.config['MYSQL_DATABASE_DB'] = 'userlist'
 app.config['MYSQL_DATABASE_HOST'] = '211.239.124.233'
 mysql.init_app(app)
@@ -78,9 +78,6 @@ def validateLogin():
 
     except Exception as e:
         return render_template('error.html',error = str(e))
-    finally:
-        cursor.close()
-        con.close()
 
 @app.route('/score')
 def score():
